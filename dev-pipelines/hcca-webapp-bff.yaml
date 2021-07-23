@@ -1,0 +1,16 @@
+kind: BuildConfig
+apiVersion: v1
+metadata:
+  name: hcca-webapp-bff-pipeline
+  labels:
+    app: hcca-webapp-bff-pipeline
+spec:
+  source:
+    git:
+      ref: "dev"
+      uri: "https://github.com/my-dha-covid19/hcca-webapp-bff.git"
+    type: Git
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: jenkins/Jenkinsfile 

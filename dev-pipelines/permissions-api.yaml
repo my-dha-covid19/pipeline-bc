@@ -1,0 +1,16 @@
+kind: BuildConfig
+apiVersion: v1
+metadata:
+  name: permissions-api-pipeline
+  labels:
+    app: permissions-api-pipeline
+spec:
+  source:
+    git:
+      ref: "dev"
+      uri: "https://github.com/my-dha-covid19/permissions-api.git"
+    type: Git
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: jenkins/Jenkinsfile 
